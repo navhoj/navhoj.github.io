@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Cookie);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 
@@ -120,8 +121,8 @@ header {
   background-color: #0d133b ;
 }
 F7C331
-0d133b
 
+39c
 .button {
   background-color:inherit;
   border:none;
@@ -378,7 +379,6 @@ a.changecolor:hover, a.changecolor:active {
     left: 100%;
 }
 
-{box-sizing: border-box;}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -388,7 +388,7 @@ input[type=text], select, textarea {
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
-  resize: vertical;
+  resize: none;
 }
 
 input[type=submit] {
@@ -398,16 +398,18 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  float: none;
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
 }
 
+
+
 .container {
   margin-top: 7px;
   border-radius: 5px;
-  position: absolute;
   background-color: #f2f2f2;
   padding: 15px;
   top: 31em;
@@ -416,6 +418,12 @@ input[type=submit]:hover {
   right: 25px;
   height: 110mm;
   width: 55mm;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
 }
 
 /*header button*/
@@ -472,4 +480,111 @@ input[type=submit]:hover {
   box-shadow: 60px 100px 0 0 rgba(255, 0, 0, 1), 80px 100px 0 0 rgba(255, 0, 0, 1), 180px 100px 0 0 rgba(255, 0, 0, 1), 200px 100px 0 0 rgba(255, 0, 0, 1), 220px 100px 0 0 rgba(255, 0, 0, 1), 60px 120px 0 0 rgba(255, 0, 0, 1), 80px 120px 0 0 rgba(255, 0, 0, 1), 100px 120px 0 0 rgba(255, 0, 0, 1), 180px 120px 0 0 rgba(255, 0, 0, 1), 220px 120px 0 0 rgba(255, 0, 0, 1), 240px 120px 0 0 rgba(255, 0, 0, 1), 60px 140px 0 0 rgba(255, 0, 0, 1), 100px 140px 0 0 rgba(255, 0, 0, 1), 180px 140px 0 0 rgba(255, 0, 0, 1), 240px 140px 0 0 rgba(255, 0, 0, 1), 260px 140px 0 0 rgba(255, 0, 0, 1), 60px 160px 0 0 rgba(255, 0, 0, 1), 80px 160px 0 0 rgba(255, 0, 0, 1), 100px 160px 0 0 rgba(255, 0, 0, 1), 120px 160px 0 0 rgba(255, 0, 0, 1), 180px 160px 0 0 rgba(255, 0, 0, 1), 260px 160px 0 0 rgba(255, 0, 0, 1), 60px 180px 0 0 rgba(255, 0, 0, 1), 120px 180px 0 0 rgba(255, 0, 0, 1), 140px 180px 0 0 rgba(255, 0, 0, 1), 180px 180px 0 0 rgba(255, 0, 0, 1), 240px 180px 0 0 rgba(255, 0, 0, 1), 260px 180px 0 0 rgba(255, 0, 0, 1), 60px 200px 0 0 rgba(255, 0, 0, 1), 140px 200px 0 0 rgba(255, 0, 0, 1), 160px 200px 0 0 rgba(255, 0, 0, 1), 180px 200px 0 0 rgba(255, 0, 0, 1), 220px 200px 0 0 rgba(255, 0, 0, 1), 240px 200px 0 0 rgba(255, 0, 0, 1), 60px 220px 0 0 rgba(255, 0, 0, 1), 160px 220px 0 0 rgba(255, 0, 0, 1), 180px 220px 0 0 rgba(255, 0, 0, 1), 200px 220px 0 0 rgba(255, 0, 0, 1), 220px 220px 0 0 rgba(255, 0, 0, 1);
   height: 20px;
   width: 20px;
+  margin: 1em;
+
+}
+
+.logbox {
+  background-color: #0d133b;
+  top: 27em;
+  right: 80.5em;
+  height: 22px;
+  width: 34px;
+  position: static;
+  z-index: -1;
+  display: inline-block;
+  overflow: hidden;
+
+}
+
+
+.mesbox {
+  background-color:gold;
+  padding: 5px;
+  top: 60em;
+  bottom: auto;
+  left: auto;
+  right: 25px;
+  position: fixed;
+  cursor: pointer;
+  border-radius: 50%;
+  
+
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #FF5A09;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 130%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #FF5A09 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.container .butbox {
+  background-color: #f2f2f2;
+  padding: 5px;
+  padding-bottom: 15px;
+  top: 60em;
+  bottom: auto;
+  left: auto;
+  right: 15px;
+  cursor: auto;
+  width: 100%;
+}
+
+.container .btn{
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  top: 60em;
+  bottom: auto;
+  left: auto;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  float: left;
+}
+
+.container .btnc{
+  background-color: red;
+  color: white;
+  padding: 10px;
+  top: 60em;
+  bottom: auto;
+  left: auto;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  float: right;
 }

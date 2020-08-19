@@ -45,10 +45,21 @@
         <h3><p><a class="changecolor" href="">頑張る</a></p></h3>
 	
         <p align="center"class="white orange-bg">Contact Information &#127757</p> 
-        <a href="#"class="fa fa-envelope"></a> 
-        <a href="#"class="fa fa-linkedin"></a>
-        <a href="#"class="fa fa-github"></a>
-        <a href="#"class="fa fa-youtube-play"></a>
+        
+        <div class="btn-group">
+          <a class="btn btn-default" href="#">
+            <i class="fa fa-envelope" title="Email"></i>
+          </a>
+          <a class="btn btn-default" href="#">
+            <i class="fa fa-linkedin" title="Linkedin"></i>
+          </a>
+          <a class="btn btn-default" href="#">
+            <i class="fa fa-github" title="Github"></i>
+          </a>
+          <a class="btn btn-default" href="#">
+            <i class="fa fa-youtube-play" title="YouTube"></i>
+          </a>
+        </div>
 
       </header>
       
@@ -57,31 +68,57 @@
         <h2 align="center">Greetings!</h2> 
         <p style = "font-family:'raleway';font-size:18px;" class="decorated"><span><a class="fa fa-quote-left"></a>Welcome to my website &#128578<a class="fa fa-quote-right"></a></span></p>
           <p> I am passionate about Behavioural Economics.</p> 
-          <div class= "pixelart-to-css" ></div>
           <p> </p>
           
-      </section>
-            
-        <div class="container">
-          <a class="hb">Contact Me</a>
-
-          <div class= "divider" ></div>
-          
-          <form action="https://formspree.io/mjvazdae"   method="POST">
-            <label style= "color: red;" for="name">Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-            
-            <label  style= "color: red;" for="Email">Email</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your Email..">      
-            <label  style= "color: red;" for="subject">Note</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>                  
-
-            <input type="submit" value="Submit">
-          </form>
-        </div>
-       
+      </section>               
     </div>
+
+     
+  <div class="tooltip">
+    <div class="mesbox">
+      <span class="tooltiptext">Message</span>
+      <div class="fa fa-comment " onclick="openForm()"></div>
+    </div>
+  </div>
+      <div class="container" id="nf">
+        <a class="hb">Contact Me</a>
+
+        <div class= "divider" ></div>
+        
+        <form action="https://formspree.io/mjvazdae" method="POST" onsubmit="myFunction()">
+          <label style= "color: red;" for="name">Name</label>
+          <input type="text" id="name" name="Name" placeholder="Your name.." required>
+          
+          <label  style= "color: red;" for="Email">Email</label>
+          <input type="text" id="email" name="Email" placeholder="Your Email.." required>      
+          <label  style= "color: red;" for="Message">Message</label>
+          <textarea id="message" name="Message" required placeholder="Write something.." style="height:100px" ></textarea>
+
+          <div class="butbox">
+            <button type="submit" class="btn">Send</button>
+            <button class="btnc"onclick="closeForm()">Cancel</button>
+          </div>
+          
+        </form>
+      </div>
+   
     <script src="javascript/sf.js"></script>
+
+    <script>
+      function openForm() {
+        document.getElementById("nf").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("nf").style.display = "none";
+      }
+    </script> 
+    <script>  
+       function myFunction() {
+    alert("Your Messege has bees sent. Thank you Kindly");
+  }
+    </script>
+
   </body>
 </html>
 

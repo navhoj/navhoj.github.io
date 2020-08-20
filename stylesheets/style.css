@@ -258,7 +258,12 @@ footer {
 
 @media screen and (max-width: 600px) {
   h2 {
-    font-size: 75px;
+    font-size: 70px;
+  }
+
+  .mesbox{
+
+    position: sticky;
   }
 }
 
@@ -573,6 +578,7 @@ input[type=submit]:hover {
   border-radius: 5px;
   border: none;
   float: left;
+  size: inherit;
 }
 
 .container .btnc{

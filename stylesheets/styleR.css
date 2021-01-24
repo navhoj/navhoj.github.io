@@ -96,9 +96,9 @@ code span.fl {
 }
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:14px/1.5 Verdana, Helvetica, Arial, sans-serif;
   color:rgb(255, 255, 255);
-  font-weight:900;
+  font-weight:333;
   background-color: #0d133b ;
   text-align: justify;
   text-justify: inter-word;
@@ -108,6 +108,7 @@ bce2e8
 h1, h2, h3, h5, h6 {
   color:#222;
   margin:0 0 20px;
+
 }
 
 p, ul, ol, table, pre, dl {
@@ -119,21 +120,24 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size:29px;
+  font: 29px Helvetica, Arial, sans-serif;
+  font-weight:900;
 }
 
 h2 {
   color:#FF5A09;
-  font-size:99px;
   max-width:100%;
   margin:0 0 20px;
-
+  font: 99px Helvetica, Arial, sans-serif;
+  font-weight:900;
 }
 
 h3 {
   color:#FF5A09;
-  font-size:18px;
   max-width:100%;
+  font: 18px Helvetica, Arial, sans-serif;
+  font-weight:900;
+
   
 }
 
@@ -145,6 +149,7 @@ h3, h5, h6 {
 h4 {
   font-size: 18px;
   font-family: 'raleway';
+  margin-top: auto;
 }
 
 a {
@@ -593,7 +598,43 @@ input[type=submit]:hover {
   height: 270;
 }
 
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 13px;
+  width: 18%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
 
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding:  18px;
+  background-color: #232741;
+  display: none;
+  overflow: hidden;
+  font:14px/1.5 Helvetica;
+}
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
 /*ec7f37
   be4f0c
 

@@ -604,7 +604,7 @@ input[type=submit]:hover {
   color: #444;
   cursor: pointer;
   padding: 13px;
-  width: 18%;
+  width: auto;
   text-align: left;
   border: none;
   outline: none;
@@ -618,7 +618,7 @@ input[type=submit]:hover {
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-  padding:  18px;
+  padding:  auto;
   background-color: #232741;
   display: none;
   overflow: hidden;

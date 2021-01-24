@@ -59,14 +59,14 @@
         </div>
       </header>      
 
-      
       <section>
         <h2 align="center">R Scripts</h2> 
         <h4><p class="decorated"><span><a class="fa fa-quote-left"></a>Welcome to my website &#128578<a class="fa fa-quote-right"></a></span></p></h4>
           <p align="center" style="color:#FF5A09">In this page some of my R scripts will be demonstrated; It is a work in progress.</p>
           <p>My first code in this page is dedicated to an instance of Randomized Inference.</p> 
- 
-
+                    <button class="accordion">Randomized Inference</button>
+          <div class="panel">
+          <p>
           <div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas,&quot;Courier New&quot;,monospace; font-weight: normal; font-size: 14px; line-height: 19px;  ; text-align: justify;"><span
 
             style="color: #6a9955;">#&nbsp;load&nbsp;the&nbsp;RI package</span><div><span
@@ -118,7 +118,7 @@
             
             style="color: #6a9955;">of&nbsp;treatment&nbsp;and </span><span style="color: #6a9955;"><span
             
-            style="color: #6a9955;">probabilities </span>are&nbsp;3/7&nbsp;for&nbsp;all&nbsp;units</span></div><div><span
+            style="color: #6a9955;">probabilities </span>are&nbsp;2/7&nbsp;for&nbsp;all&nbsp;units</span></div><div><span
             
             style="color: #9cdcfe;">probs</span><span style="color: #d4d4d4;">&nbsp;&lt;-&nbsp;</span><span
             
@@ -156,7 +156,7 @@
             
             style="color: #d4d4d4;">=</span><span style="color: #569cd6;">NULL</span><span style="color: #d4d4d4;">)&nbsp; </span><span
             
-            style="color: #6a9955;"></span></div><div><br></div><div><span style="color: #6a9955;">#&nbsp;show&nbsp;all&nbsp;56&nbsp;possible&nbsp;random&nbsp;assignments&nbsp;in&nbsp;which&nbsp;3&nbsp;units&nbsp;are&nbsp;treated</span></div><div><span
+            style="color: #6a9955;"></span></div><div><br></div><div><span style="color: #6a9955;">#&nbsp;show&nbsp;all&nbsp;21&nbsp;possible&nbsp;random&nbsp;assignments&nbsp;in&nbsp;which&nbsp;2&nbsp;units&nbsp;are&nbsp;treated</span></div><div><span
             
             style="color: #9cdcfe;">perms</span></div><div><span style="color: #9cdcfe;"><br></span></div><div><br><pre
             
@@ -210,7 +210,7 @@
 8     1     1     1           
             </span></span></pre></div><span style="color: #6a9955;">#&nbsp;--------------------------------------------------------------------</span><div><span
             
-            style="color: #6a9955;">#&nbsp;estimate&nbsp;sampling&nbsp;distribution&nbsp;under&nbsp;the&nbsp;sharp&nbsp;null&nbsp;that&nbsp;tau=0&nbsp;for&nbsp;all&nbsp;units</span></div><div><span
+            style="color: #6a9955;">#&nbsp;estimate&nbsp;sampling&nbsp;dist&nbsp;under&nbsp;the&nbsp;sharp&nbsp;null&nbsp;that&nbsp;tau=0&nbsp;for&nbsp;all&nbsp;units</span></div><div><span
             
             style="color: #6a9955;">#&nbsp;--------------------------------------------------------------------</span></div><span
             
@@ -333,7 +333,7 @@
             
             style="color: #9cdcfe;">ate</span><span style="color: #d4d4d4;">)</span></div><div><br><div
             
-            style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/ri.jpg"
+            style="text-align: center;"><span style="color: #6a9955;"><img src="file:///C:/Users/Navid/Desktop/13.jpg"
             
             alt="2" title="1" style="width: 335px; height: 354px;"></span></div></div><div><pre
             
@@ -442,6 +442,7 @@
       
 
       </section>  
+      
     </div>
 
 
@@ -494,7 +495,23 @@
       alert("Thank you Kindly");}
     </script>
   
-  
+      <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
   <footer>
     <div class="footer">Designed with &#128151 By navhoj</div>
   </footer> 

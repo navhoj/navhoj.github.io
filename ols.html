@@ -1,0 +1,298 @@
+<!doctype html>
+<html>
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175525981-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-175525981-1');
+</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="default-style" content="stylesheets/styleR.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="description" content="Personal website of S. Navid Hojaji">
+    <meta name="author" content="S. Navid Hojaji">
+    <meta name="keywords" content="R, Text Analysis, Statistics, Python, Machine learning, Behavioural Economics">
+
+    <title>S. Navid Hojaji by navhoj</title>
+
+    <link rel="stylesheet" href="stylesheets/styleR.css">
+    <link rel="icon" href="Circle.png" type="image/png" sizes="11">
+   
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="white orange-bg"><h1><p align="center">S. Navid Hojaji</p></h1></div>
+
+        <div class= "pic"><p><img src="Circle.png" ></p>
+
+        <div class="white orange-bg"><p align="center">Master of Business Administration</p></div>
+
+        <h3><p><a  class="changecolor" href="index.html">Home</a></p></h3>
+        <h3><p><a class="changecolor" href="research.html">Research</a></p></h3>
+        <h3><p><a class="changecolor" href="Text_Analysis.html">Text Analysis</a></p></h3>
+        <h3><p><a class="changecolor" href="py.html">Python Scripts</a></p></h3>
+        <h3><p><a class="changecolor" href="R.html">R Scripts</a></p></h3>
+        <h3 class="changecolor"><p class="current" href="#">OLS</p></h3>
+        <h3><p><a class="changecolor" href="about.html">About</a></p></h3>
+	
+        <div class="white orange-bg"><p align="center">Contact Information &#127757</p> </div>
+      
+        <div class="btn-group"><p align="center">
+          <a class="btn btn-default" href="mailto:navhoj@gmail.com">
+            <i class="fa fa-envelope" title="Email"></i>
+          </a>
+          <a class="btn btn-default" href="https://linkedin.com/in/navid-hojaji"target="_blank">
+            <i class="fa fa-linkedin" title="Linkedin"></i>
+          </a>
+          <a class="btn btn-default" href="https://github.com/navhoj" target="_blank">
+            <i class="fa fa-github" title="Github"></i>
+          </a>
+          <a class="btn btn-default" href="yt.html">
+            <i class="fa fa-youtube-play" title="YouTube"></i>
+          </a>
+        </p>
+        </div>
+      </header>      
+
+      <section>
+        <h2 align="center">OLS</h2> 
+        <h4><p class="decorated"><span><a class="fa fa-quote-left"></a>Welcome to my website &#128578<a class="fa fa-quote-right"></a></span></p></h4>        
+          <p> On this page, I intend to iterate an example of OLS regression with various software and compare the results.</p> 
+          <p>Inspired by the excellent website of <a  href="https://quantecon.org" style= "color: #FF5A09;"target="_blank">quantecon</a>, I decided to use one of their examples which they adopt from study of
+          Daron Acemoglu, Simon Johnson, and James A Robinson<a class="changecolor" href="https://www.aeaweb.org/articles?id=10.1257/aer.91.5.1369"style= "color: #FF5A09;"target="_blank"> (2001)</a>. In that study,
+          the authors wish to determine whether or not differences in institutions can help to explain observed economic outcomes.<br> How do we measure institutional differences and economic outcomes?</br>
+          In this paper, economic outcomes are proxied by log GDP per capita in 1995, adjusted for exchange rates. institutional differences are proxied by an index of protection against expropriation on average 
+          over 1985-95, constructed by the<a class="changecolor" href="https://www.prsgroup.com/"style= "color: #FF5A09;"target="_blank"> Political Risk Services Group</a>. 
+          These variables and other data used in the paper are available for download on Daron Acemoglu’s<a class="changecolor" href="https://economics.mit.edu/faculty/acemoglu/data/ajr2001"style= "color: #FF5A09;"target="_blank"> webpage</a>.</p> 
+          
+          <button class="accordion">Python</button>
+          <div class="panel">
+          <p><div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;numpy&nbsp;</span><span
+
+style="color: #569cd6;">as</span><span style="color: #d4d4d4;">&nbsp;np</span></div><div><span
+
+style="color: #c586c0;">import</span><span style="color: #d4d4d4;">&nbsp;matplotlib.pyplot&nbsp;</span><span
+
+style="color: #569cd6;">as</span><span style="color: #d4d4d4;">&nbsp;plt</span></div><div><span
+
+style="color: #d4d4d4;">%matplotlib&nbsp;inline</span></div><div><span style="color: #c586c0;">import</span><span
+
+style="color: #d4d4d4;">&nbsp;pandas&nbsp;</span><span style="color: #569cd6;">as</span><span
+
+style="color: #d4d4d4;">&nbsp;pd</span></div><div><span style="color: #c586c0;">import</span><span
+
+style="color: #d4d4d4;">&nbsp;statsmodels.api&nbsp;</span><span style="color: #569cd6;">as</span><span
+
+style="color: #d4d4d4;">&nbsp;sm</span></div><div><span style="color: #c586c0;">from</span><span
+
+style="color: #d4d4d4;">&nbsp;statsmodels.iolib.summary2&nbsp;</span><span style="color: #c586c0;">import</span><span
+
+style="color: #d4d4d4;">&nbsp;summary_col</span></div><div><span style="color: #c586c0;">from</span><span
+
+style="color: #d4d4d4;">&nbsp;linearmodels.iv&nbsp;</span><span style="color: #c586c0;">import</span><span
+
+style="color: #d4d4d4;">&nbsp;IV2SLS</span></div><div><span style="color: #d4d4d4;"><br></span></div><div><span
+
+style="color: #d4d4d4;">df1&nbsp;=&nbsp;pd.read_stata(</span><span style="color: #ce9178;">'https://github.com/QuantEcon/lecture-python/blob/master/source<br>/_static/lecture_specific/ols/maketable1.dta?raw=true'</span><span
+
+style="color: #d4d4d4;">)</span></div><div><span style="color: #d4d4d4;">df1.head()</span></div><div><br><br><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/data.jpg"
+
+alt="2" title="1" style="width: 335px; height: 354px;"><br></span></div><div style="text-align: left;"><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #d4d4d4;">plt.style.use(</span><span style="color: #ce9178;">'seaborn'</span><span
+
+style="color: #d4d4d4;">)</span></div><br><div><span style="color: #d4d4d4;">df1.plot(</span><span
+
+style="color: #9cdcfe;">x</span><span style="color: #d4d4d4;">=</span><span style="color: #ce9178;">'avexpr'</span><span
+
+style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">y</span><span
+
+style="color: #d4d4d4;">=</span><span style="color: #ce9178;">'logpgp95'</span><span
+
+style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">kind</span><span
+
+style="color: #d4d4d4;">=</span><span style="color: #ce9178;">'scatter'</span><span
+
+style="color: #d4d4d4;">)</span></div><div><span style="color: #d4d4d4;">plt.show()</span></div><div><br><br>
+<div style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/scatter.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"><br></span></div><div style="text-align: left;"><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #d4d4d4;">reg1&nbsp;=&nbsp;sm.OLS(</span><span style="color: #9cdcfe;">endog</span><span
+
+style="color: #d4d4d4;">=df1[</span><span style="color: #ce9178;">'logpgp95'</span><span
+
+style="color: #d4d4d4;">],&nbsp;</span><span style="color: #9cdcfe;">exog</span><span
+
+style="color: #d4d4d4;">=df1[[</span><span style="color: #ce9178;">'const'</span><span
+
+style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'avexpr'</span><span
+
+style="color: #d4d4d4;">]],&nbsp;\</span></div><div><span style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+
+style="color: #9cdcfe;">missing</span><span style="color: #d4d4d4;">=</span><span
+
+style="color: #ce9178;">'drop'</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #dcdcaa;">type</span><span style="color: #d4d4d4;">(reg1)</span></div><div><span
+
+style="color: #d4d4d4;">results&nbsp;=&nbsp;reg1.fit()</span></div><div><span style="color: #dcdcaa;">type</span><span
+
+style="color: #d4d4d4;">(results)</span></div><div><span style="color: #569cd6;">print</span><span
+
+style="color: #d4d4d4;">(results.summary())</span></div></div><br>
+<div style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/reg_table.jpg"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div><br><span style="color: #6a9955;"></span></div></div></div><br><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><span
+
+style="color: #d4d4d4;">df1_plot&nbsp;=&nbsp;df1.dropna(</span><span style="color: #9cdcfe;">subset</span><span
+
+style="color: #d4d4d4;">=[</span><span style="color: #ce9178;">'logpgp95'</span><span
+
+style="color: #d4d4d4;">,&nbsp;</span><span style="color: #ce9178;">'avexpr'</span><span
+
+style="color: #d4d4d4;">])</span><span style="color: #d4d4d4;"><br></span></div><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><span
+
+style="color: #d4d4d4;">fix,&nbsp;ax&nbsp;=&nbsp;plt.subplots()</span><div><span
+
+style="color: #d4d4d4;">ax.scatter(df1_plot[</span><span style="color: #ce9178;">'avexpr'</span><span
+
+style="color: #d4d4d4;">],&nbsp;results.predict(),&nbsp;</span><span style="color: #9cdcfe;">alpha</span><span
+
+style="color: #d4d4d4;">=</span><span style="color: #b5cea8;">0.5</span><span style="color: #d4d4d4;">,</span></div><div><span
+
+style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+
+style="color: #9cdcfe;">label</span><span style="color: #d4d4d4;">=</span><span
+
+style="color: #ce9178;">'predicted'</span><span style="color: #d4d4d4;">)</span></div><span
+
+style="color: #d4d4d4;">ax.scatter(df1_plot[</span><span style="color: #ce9178;">'avexpr'</span><span
+
+style="color: #d4d4d4;">],&nbsp;df1_plot[</span><span style="color: #ce9178;">'logpgp95'</span><span
+
+style="color: #d4d4d4;">],&nbsp;</span><span style="color: #9cdcfe;">alpha</span><span
+
+style="color: #d4d4d4;">=</span><span style="color: #b5cea8;">0.5</span><span style="color: #d4d4d4;">,</span><div><span
+
+style="color: #d4d4d4;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+
+style="color: #9cdcfe;">label</span><span style="color: #d4d4d4;">=</span><span
+
+style="color: #ce9178;">'observed'</span><span style="color: #d4d4d4;">)</span></div><span
+
+style="color: #d4d4d4;">ax.legend()</span><div><span style="color: #d4d4d4;">ax.set_title(</span><span
+
+style="color: #ce9178;">'OLS&nbsp;predicted&nbsp;values'</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #d4d4d4;">ax.set_xlabel(</span><span style="color: #ce9178;">'avexpr'</span><span
+
+style="color: #d4d4d4;">)</span></div><div><span style="color: #d4d4d4;">ax.set_ylabel(</span><span
+
+style="color: #ce9178;">'logpgp95'</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #d4d4d4;">plt.show()</span></div><div><br>
+<div style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/scatter2.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div></div></div><span
+
+style="color: #6a9955;"></span></div></div></div></p>
+           <p><strong style="color: #FF5A09;">Key Words:</strong> Machine Learning; Behavioural Economics; Behavioural Finance; Systematic Literature Review.</p> 
+          </div>
+
+      </section>  
+    </div>
+
+
+    
+  <div class="tooltip">
+    <div class="mesbox">
+      <span class="tooltiptext">Message</span>
+      <div class="fa fa-comment " onclick="openForm()"></div>
+    </div>
+  </div>
+      <div class="container" id="navidsform">
+        <a class="hb">Contact Me</a>
+
+        <div class= "divider" ></div>
+        
+        <form action="https://formspree.io/mjvazdae" method="POST" onsubmit="myFunction()">
+          <label style= "color: red;" for="name">Name</label>
+          <input type="text" id="name" name="Name" placeholder="Your name..">
+          
+          <label  style= "color: red;" for="Email">Email</label>
+          <input type="text" id="email" name="Email" placeholder="Your Email..">      
+          <label  style= "color: red;" for="Message">Message</label>
+          <textarea id="message" name="Message" placeholder="Write something.." style="height:100px" ></textarea>
+
+          <div class="butbox">
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btnc"onclick="closeForm()">Cancel</button>
+          </div>
+          
+
+        </form>
+      </div>
+  
+    
+
+
+    <script src="C:\Users\Navid\Desktop\Site\Scalefix.js"></script>
+    <script>
+      function openForm() {
+        document.getElementById("navidsform").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("navidsform").style.display = "none";
+      }
+    </script>
+
+    <script>
+      function myFunction() {
+      alert("Thank you Kindly");}
+    </script>
+    <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+  
+  
+  <footer>
+    <div class="footer">Designed with &#128151 By navhoj</div>
+  </footer> 
+
+  
+  </body>
+</html>

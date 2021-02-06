@@ -217,6 +217,138 @@ alt="2" ></span></div></div></div><span
 style="color: #6a9955;"></span></div></div></div></p>
           </div>
 
+          <button class="accordion">Julia</button>
+          <div class="panel">
+          <p><div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;DataFrames</span></div><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;CSV</span></div><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;Plots</span></div><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;Lathe</span></div><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;GLM</span></div><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;Statistics</span></div><div><span
+
+style="color: #c586c0;">using</span><span style="color: #d4d4d4;">&nbsp;StatsPlots</span></div><br><div><span
+
+style="color: #d4d4d4;">df=CSV.</span><span style="color: #dcdcaa;">read</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #ce9178;">"E:</span><span style="color: #d7ba7d;">\\</span><span
+
+style="color: #ce9178;">Downloads</span><span style="color: #d7ba7d;">\\</span><span
+
+style="color: #ce9178;">FDM</span><span style="color: #d7ba7d;">\\</span><span style="color: #ce9178;">13.csv"</span><span
+
+style="color: #d4d4d4;">,DataFrame)&nbsp;</span></div><span style="color: #dcdcaa;">first</span><span
+
+style="color: #d4d4d4;">(df,</span><span style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">)</span><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/julia1.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div><div><span style="color: #6a9955;">#&nbsp;as&nbsp;shown&nbsp;in&nbsp;the&nbsp;above&nbsp;picture&nbsp;the&nbsp;'csv'&nbsp;file&nbsp;that&nbsp;I&nbsp;have,&nbsp;recognize&nbsp;every&nbsp;column</span></div><div><span
+
+style="color: #6a9955;">&nbsp;as&nbsp;string,&nbsp;therefore,&nbsp;in&nbsp;order&nbsp;to&nbsp;change&nbsp;the&nbsp;needed&nbsp;columns&nbsp;to&nbsp;float,&nbsp;one&nbsp;can&nbsp;use</span></div><div><span
+
+style="color: #6a9955;">&nbsp;the&nbsp;code&nbsp;below</span></div><div><span style="color: #dcdcaa;">string_to_float</span><span
+
+style="color: #d4d4d4;">(str)&nbsp;=&nbsp;</span><span style="color: #c586c0;">try</span><span
+
+style="color: #d4d4d4;">&nbsp;</span><span style="color: #dcdcaa;">parse</span><span
+
+style="color: #d4d4d4;">(Float64,&nbsp;str)&nbsp;</span><span style="color: #c586c0;">catch</span><span
+
+style="color: #d4d4d4;">;</span></div><div><span style="color: #dcdcaa;">return</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #569cd6;">missing</span><span
+
+style="color: #d4d4d4;">)&nbsp;</span><span style="color: #c586c0;">end</span><span
+
+style="color: #d4d4d4;">;&nbsp;df.logpgp95&nbsp;=&nbsp;</span><span style="color: #dcdcaa;">map</span><span
+
+style="color: #d4d4d4;">(string_to_float,&nbsp;df.logpgp95)</span></div><div><span
+
+style="color: #dcdcaa;">first</span><span style="color: #d4d4d4;">(df,</span><span
+
+style="color: #b5cea8;">5</span><span style="color: #d4d4d4;">)</span></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/julia2.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div><div><span style="color: #d4d4d4;">train_plot&nbsp;=&nbsp;</span><span
+
+style="color: #dcdcaa;">scatter</span><span style="color: #d4d4d4;">(df.avexpr,df.logpgp95,&nbsp;title&nbsp;=&nbsp;</span><span
+
+style="color: #ce9178;">"Scatter&nbsp;Plot&nbsp;logpgp95&nbsp;vs&nbsp;avexpr"</span><span
+
+style="color: #d4d4d4;">,</span></div><div><span style="color: #d4d4d4;">ylabel&nbsp;=&nbsp;</span><span
+
+style="color: #ce9178;">"logpgp95"</span><span style="color: #d4d4d4;">,&nbsp;xlabel&nbsp;=&nbsp;</span><span
+
+style="color: #ce9178;">"avexpr"</span><span style="color: #d4d4d4;">,legend&nbsp;=&nbsp;</span><span
+
+style="color: #569cd6;">false</span><span style="color: #d4d4d4;">,&nbsp;smooth=</span><span
+
+style="color: #569cd6;">true</span><span style="color: #d4d4d4;">)</span></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/julia4.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div><div><span
+
+style="color: #c586c0;"><br></span></div><div><span style="color: #c586c0;">using</span><span
+
+style="color: #d4d4d4;">&nbsp;DataFrames,&nbsp;GLM</span></div><div><span style="color: #d4d4d4;">ols&nbsp;=&nbsp;</span><span
+
+style="color: #dcdcaa;">lm</span><span style="color: #d4d4d4;">(</span><span style="color: #dcdcaa;">@formula</span><span
+
+style="color: #d4d4d4;">(logpgp95&nbsp;~&nbsp;avexpr),&nbsp;df)</span></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/julia3.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div><div><span style="color: #dcdcaa;">r2</span><span
+
+style="color: #d4d4d4;">(ols)</span></div></div></div>
+    <div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/julia6.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span><br><span style="color: #6a9955;"></span></div><div><div
+
+style="text-align: left;"><div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><br><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #d4d4d4;">ypredicted&nbsp;=&nbsp;</span><span style="color: #dcdcaa;">predict</span><span
+
+style="color: #d4d4d4;">(ols,df)</span></div><div><span style="color: #d4d4d4;">Y2&nbsp;=&nbsp;Base.</span><span
+
+style="color: #dcdcaa;">hcat</span><span style="color: #d4d4d4;">(df[:logpgp95],ypredicted)</span></div><div><span
+
+style="color: #d4d4d4;">train_plot&nbsp;=&nbsp;</span><span style="color: #dcdcaa;">scatter</span><span
+
+style="color: #d4d4d4;">(df.avexpr,Y2,&nbsp;title&nbsp;=&nbsp;</span><span style="color: #ce9178;">"Scatter&nbsp;Plot&nbsp;with&nbsp;line"</span><span
+
+style="color: #d4d4d4;">,</span></div><div><span style="color: #d4d4d4;">&nbsp;ylabel&nbsp;=&nbsp;</span><span
+
+style="color: #ce9178;">"logpgp95"</span><span style="color: #d4d4d4;">,&nbsp;xlabel&nbsp;=&nbsp;</span><span
+
+style="color: #ce9178;">"avexpr"</span><span style="color: #d4d4d4;">,legend&nbsp;=&nbsp;</span><span
+
+style="color: #569cd6;">false</span><span style="color: #d4d4d4;">,&nbsp;smooth=</span><span
+
+style="color: #569cd6;">true</span><span style="color: #d4d4d4;">)</span></div></div></div><div><br><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/julia5.png"
+
+alt="2" title="1" style="width: 335px; height: 354px;"></span></div></div><span
+
+style="color: #6a9955;"></span></div></div></div></div>
+</p>
+          </div>
       </section>  
     </div>
 

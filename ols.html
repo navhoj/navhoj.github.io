@@ -350,6 +350,132 @@ alt="2"></span></div></div><span
 style="color: #6a9955;"></span></div></div></div></div>
 </p>
           </div>
+	  
+	  
+<button class="accordion">R</button>
+          <div class="panel">
+           <div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><br><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #dcdcaa;">library</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">tidyverse</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #dcdcaa;">library</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">haven</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #dcdcaa;">library</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">dplyr</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #dcdcaa;">library</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">ggplot2</span><span style="color: #d4d4d4;">)</span></div><br><div><span
+
+style="color: #6a9955;">#read&nbsp;data&nbsp;from&nbsp;hard&nbsp;drive&nbsp;and&nbsp;name&nbsp;it&nbsp;datum</span></div><div><span
+
+style="color: #9cdcfe;">datum</span><span style="color: #d4d4d4;">&nbsp;&lt;-&nbsp;</span><span
+
+style="color: #9cdcfe;">read_dta</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #ce9178;">"X:/Data/Source/maketable1.dta"</span><span
+
+style="color: #d4d4d4;">)</span></div><div><span style="color: #9cdcfe;">datum</span></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/datum.png"
+
+alt="2" ></span></div><div><span style="color: #6a9955;">#draw&nbsp;scatter&nbsp;plot&nbsp;before&nbsp;fitting&nbsp;the&nbsp;model</span></div><div><span
+
+style="color: #9cdcfe;">datum</span><span style="color: #d4d4d4;">&nbsp;%&gt;%</span></div><div><span
+
+style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #9cdcfe;">ggplot</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">aes</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">x</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span
+
+style="color: #9cdcfe;">avexpr</span><span style="color: #d4d4d4;">,&nbsp;</span><span
+
+style="color: #9cdcfe;">y</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span
+
+style="color: #9cdcfe;">logpgp95</span><span style="color: #d4d4d4;">))&nbsp;+</span></div><div><span
+
+style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #9cdcfe;">geom_point</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">colour</span><span
+
+style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #ce9178;">"red"</span><span
+
+style="color: #d4d4d4;">)</span></div><div style="text-align: center;"><span style="color: #6a9955;"><img
+
+src="Pics/Rplot01.png" alt="2" ></span></div><div><span
+
+style="color: #6a9955;">#estimating&nbsp;the&nbsp;model</span></div><div><span style="color: #9cdcfe;">reg</span><span
+
+style="color: #d4d4d4;">&lt;-</span><span style="color: #dcdcaa;">lm</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">logpgp95</span><span
+
+style="color: #569cd6;">~</span><span style="color: #9cdcfe;">avexpr</span><span
+
+style="color: #d4d4d4;">,</span><span style="color: #9cdcfe;">data</span><span style="color: #d4d4d4;">=</span><span
+
+style="color: #9cdcfe;">datum</span><span style="color: #d4d4d4;">)</span></div><div><span
+
+style="color: #9cdcfe;">reg</span></div><div><span style="color: #6a9955;">#showing&nbsp;the&nbsp;results</span></div><div><span
+
+style="color: #dcdcaa;">summary</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">reg</span><span style="color: #d4d4d4;">)</span></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/estimate.png"
+
+alt="2"></span></div><div><span style="color: #6a9955;">#draw&nbsp;scatter&nbsp;plot&nbsp;with&nbsp;fitted&nbsp;line</span></div><div><span
+
+style="color: #9cdcfe;">datum</span><span style="color: #d4d4d4;">&nbsp;%&gt;%</span></div><div><span
+
+style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #9cdcfe;">ggplot</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">aes</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">x</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span
+
+style="color: #dcdcaa;">sqrt</span><span style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">avexpr</span><span
+
+style="color: #d4d4d4;">),&nbsp;</span><span style="color: #9cdcfe;">y</span><span
+
+style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #dcdcaa;">sqrt</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">logpgp95</span><span
+
+style="color: #d4d4d4;">)))&nbsp;+</span></div><div><span style="color: #d4d4d4;">&nbsp;&nbsp;</span><span
+
+style="color: #9cdcfe;">geom_point</span><span style="color: #d4d4d4;">(</span><span
+
+style="color: #9cdcfe;">colour</span><span style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span
+
+style="color: #ce9178;">"red"</span><span style="color: #d4d4d4;">)&nbsp;+</span></div><div><span
+
+style="color: #d4d4d4;">&nbsp;&nbsp;</span><span style="color: #9cdcfe;">geom_smooth</span><span
+
+style="color: #d4d4d4;">(</span><span style="color: #9cdcfe;">method</span><span
+
+style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #ce9178;">"lm"</span><span
+
+style="color: #d4d4d4;">,&nbsp;</span><span style="color: #9cdcfe;">fill</span><span
+
+style="color: #d4d4d4;">&nbsp;=&nbsp;</span><span style="color: #569cd6;">NA</span><span
+
+style="color: #d4d4d4;">)</span></div><div><span style="color: #d4d4d4;"><br></span></div></div></div><div><br><div
+
+style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas,&quot;Courier New&quot;,monospace; font-weight: normal; font-size: 14px; line-height: 19px; white-space: pre; text-align: center;"><span
+
+style="color: #6a9955;"><img src="Pics/Rplot02.png" alt="2"></span><span style="color: #6a9955;"></span></div></div></div></div>
+		  
       </section>  
     </div>
 

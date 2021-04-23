@@ -476,6 +476,61 @@ style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas,&quot;Co
 
 style="color: #6a9955;"><img src="Pics/Rplot02.png" alt="2"></span><span style="color: #6a9955;"></span></div></div></div></div>
 		  
+</div>
+
+
+<button class="accordion">STATA</button>
+    <div class="panel">
+      <div style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><br><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><br><span
+
+style="color: #6a9955;">#read data</span></div><div><span style="color: #569cd6;">use</span><span
+
+style="color: #d4d4d4;">&nbsp;E:/Downloads/FDM/maketable1.dta</span></div><div><span
+
+style="color: #6a9955;">#Show first five row</span></div><div><span
+
+style="color: #c586c0;">list</span><span style="color: #d4d4d4;">&nbsp;in&nbsp;</span><span
+
+style="color: #b5cea8;">1</span><span style="color: #d4d4d4;">/</span><span style="color: #b5cea8;">5</span></div></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img src="Pics/stata1.png"
+
+alt="2"></span></div><div><span style="color: #6a9955;">#draw&nbsp;scatter&nbsp;plot&nbsp;before&nbsp;fitting&nbsp;the&nbsp;model</span></div><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #c586c0;">scatter</span><span style="color: #d4d4d4;">&nbsp;logpgp95&nbsp;avexpr</span></div></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img Pics/stata2.png"
+
+alt="2" ></span></div><div><span style="color: #6a9955;">#estimating&nbsp;the&nbsp;model</span></div><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #c586c0;">regress</span><span style="color: #d4d4d4;">&nbsp;logpgp95&nbsp;avexpr</span></div></div><div
+
+style="text-align: center;"><span style="color: #6a9955;"><img Pics/stata3.png"
+
+alt="2"></span></div><div><span style="color: #6a9955;">#draw&nbsp;scatter&nbsp;plot&nbsp;with&nbsp;fitted&nbsp;line</span></div><div
+
+style="color: #d4d4d4;background-color: #1e1e1e;font-family: Consolas, 'Courier New', monospace;font-weight: normal;font-size: 14px;line-height: 19px;white-space: pre;"><div><span
+
+style="color: #c586c0;">scatter</span><span style="color: #d4d4d4;">&nbsp;logpgp95&nbsp;avexpr&nbsp;||&nbsp;</span><span
+
+style="color: #c586c0;">lfit</span><span style="color: #d4d4d4;">&nbsp;logpgp95&nbsp;avexpr</span></div></div><div><span
+
+style="color: #d4d4d4;"><br></span></div></div></div><div><br><div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas,&quot;Courier New&quot;,monospace; font-weight: normal; font-size: 14px; line-height: 19px; white-space: pre; text-align: center;"><span
+
+style="color: #6a9955;"><img src="Pics/stata4.png" alt="2"></span><span style="color: #6a9955;"></span></div></div></div></div>
+    </div>
+		  
+		  
       </section>  
     </div>
 

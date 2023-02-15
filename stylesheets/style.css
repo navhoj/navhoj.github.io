@@ -89,7 +89,7 @@ img {
 header {
   width:270px;
   float:left;
-  position:fixed;
+  position:relative;
   background-color: #0d133b ;
 }
 
@@ -324,10 +324,10 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 15px;
-  top: 31em;
-  bottom: auto;
-  left: auto;
-  right: 25px;
+  bottom: 0.7cm;
+  right: 0;
+  position: fixed;
+
   height: 110mm;
   width: 55mm;
   display: none;
@@ -406,10 +406,8 @@ input[type=submit]:hover {
 .mesbox {
   background-color:gold;
   padding: 5px;
-  top: 60em;
-  bottom: auto;
-  left: auto;
-  right: 25px;
+  bottom: 0.7cm;
+  right: 0;
   position: fixed;
   cursor: pointer;
   border-radius: 50%;
@@ -418,9 +416,11 @@ input[type=submit]:hover {
 }
 
 .tooltip {
-  position: relative;
+  position: fixed;
   display: inline-block;
   border-bottom: 1px dotted black;
+  bottom: 0.7;
+  right: 0;
 }
 
 .tooltip .tooltiptext {
@@ -548,3 +548,18 @@ input[type=submit]:hover {
   be4f0c
 
 &#127801 &#127799 &#127794 &#127796 &#127803 */
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+}

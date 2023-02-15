@@ -180,7 +180,7 @@ img {
 header {
   width:270px;
   float:left;
-  position:fixed;
+  position:relative;
   background-color: #0d133b ;
 }
 
@@ -415,13 +415,11 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 15px;
-  top: 31em;
-  bottom: auto;
-  left: auto;
-  right: 25px;
   height: 110mm;
   width: 55mm;
   display: none;
+  bottom: 0.7cm;
+  right: 0;
   position: fixed;
   bottom: 0;
   right: 15px;
@@ -498,9 +496,8 @@ input[type=submit]:hover {
   background-color:gold;
   padding: 5px;
   top: 60em;
-  bottom: auto;
-  left: auto;
-  right: 25px;
+  bottom: 0.7cm;
+  right: 0;
   position: fixed;
   cursor: pointer;
   border-radius: 50%;
@@ -509,9 +506,11 @@ input[type=submit]:hover {
 }
 
 .tooltip {
-  position: relative;
+  position: fixed;
   display: inline-block;
   border-bottom: 1px dotted black;
+  bottom: 0.7;
+  right: 0;
 }
 
 .tooltip .tooltiptext {

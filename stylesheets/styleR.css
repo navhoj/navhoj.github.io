@@ -1,6 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css2?family=Merriweather&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Inconsolata&display=swap);
+
 
 code {
 	white-space: pre;
@@ -17,7 +19,7 @@ pre {
 	padding: 10px;
 }
 code {
-	font-family: Consolas, Monaco, "Courier New", monospace;
+	font-family: 'Inconsolata';
 	font-size: 85%;
 }
 .sourceCode {
@@ -40,7 +42,7 @@ body {
 	overflow: visible;
 	padding-left: 2em;
 	padding-right: 2em;
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Roboto', 'Merriweather', serif;
 	font-size: 14px;
 	line-height: 1.35;
 }
@@ -96,7 +98,7 @@ code span.fl {
 }
 body {
   padding:13px;
-  font:14px/1.5 Verdana, Helvetica, Arial, sans-serif;
+  font:14px/1.5 'Roboto', 'Merriweather', serif;
   color:rgb(255, 255, 255);
   font-weight:333;
   background-color: #0d133b ;
@@ -120,22 +122,24 @@ h1, h2, h3 {
 }
 
 h1 {
-  font: 29px Helvetica, Arial, sans-serif;
+  font: 29px 'Merriweather', serif;
   font-weight:900;
+  letter-spacing: 1.5px;
+
 }
 
 h2 {
   color:#FF5A09;
   max-width:100%;
   margin:0 0 20px;
-  font: 99px Helvetica, Arial, sans-serif;
+  font: 99px 'Merriweather', serif;
   font-weight:900;
 }
 
 h3 {
   color:#FF5A09;
   max-width:100%;
-  font: 18px Helvetica, Arial, sans-serif;
+  font: 18px 'Merriweather', serif;
   font-weight:900;
 
   
@@ -157,7 +161,7 @@ a {
   font-weight:400;
   text-decoration:none;
 }
-39c
+
 a small {
   font-size:11px;
   color:#777;
@@ -212,6 +216,7 @@ section {
   padding: 0rem;
   background-color: #1d1145;
   text-align: center;
+  font: 14px 'Merriweather', serif;
 }
 
 @media print, screen and (max-width: 960px) {
@@ -338,6 +343,7 @@ pre {
 
 .orange-bg {
   background:#FF5A09 ;
+  font: 14px 'Merriweather', serif;
 }
 
 
@@ -621,7 +627,7 @@ input[type=submit]:hover {
   background-color: #232741;
   display: none;
   overflow: hidden;
-  font:14px/1.5 Helvetica;
+  font:14px/1.5 'Merriweather', serif;
 }
 .accordion:after {
   content: '\02795'; /* Unicode character for "plus" sign (+) */

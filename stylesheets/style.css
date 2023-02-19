@@ -2,6 +2,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
+
 /*
 https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
 */
@@ -523,6 +524,8 @@ input[type=submit]:hover {
   border: none;
   outline: none;
   transition: 0.4s;
+  font:14px/1.5 'Merriweather';
+
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
